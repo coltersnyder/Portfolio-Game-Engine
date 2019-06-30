@@ -4,4 +4,4 @@ This is a game engine I have created to show off my abilities in engine programm
 Hopeful TODOS (however not very likely):
   - Port to WiiU
   - Port to 3DS
-     -Note: I know these consoles are getting outdated, however they are the only consoles where I have access to the SDKs.
+  - Note: I know these consoles are getting outdated, however they are the only consoles where I have access to the SDKs.
