@@ -1,11 +1,13 @@
 #pragma once
-#include "GL/freeglut.h"
+
 #include "GL/glew.h"
+#include "GL/freeglut.h"
 
 namespace pge
 {
 	struct Window
 	{
+		const char* title;
 		int width;
 		int height;
 		int posX;
@@ -31,6 +33,6 @@ namespace pge
 		
 
 	public:
-		void init(Window window, Context context, Framebuffer framebuffer);
+		void init(Window window, Context context, Framebuffer framebuffer, int* argc, char** argv);
 	};
 }

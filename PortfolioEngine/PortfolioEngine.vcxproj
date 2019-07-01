@@ -129,6 +129,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="include\engine.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Sample Game\src\main.cpp" />
+    <ClCompile Include="src\Core\engine.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
