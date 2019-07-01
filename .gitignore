@@ -1,2 +1,14 @@
-D:\Projects\PortfolioEngine\.vs\*
-D:\Projects\PortfolioEngine\PortfolioEngine\.vs\*
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+*.userprefs
+
+.vs/
+
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+*.VisualState.xml
+TestResult.xml
