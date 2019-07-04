@@ -1,17 +1,37 @@
 #include "../../include/engine.h"
-#include <iostream>
 
 using namespace pge;
 
-void Engine::init(Window window, Context context, Framebuffer framebuffer, int* argc, char** argv)
+SDL_Window* createWindow(char* title, int posX, int posY, int width, int height, UINT32 winFlags)
 {
-	glutInit(argc, argv);
-	
-	glutCreateWindow(window.title);
-	glutReshapeWindow(window.width, window.height);
-	glutPositionWindow(window.posX, window.posY);
+	SDL_Window* window = SDL_CreateWindow(title, posX, posY, width, height, winFlags);
+	if(window == nullptr)
+	{
+		std::cout << "Error Creating Window: " << SDL_GetError() << std::endl;
+		SDL_Quit();
+	}
+	return window;
+}
 
-	glutInitContextVersion(context.majVersion, context.minVersion);
+SDL_Renderer* createRenderer(SDL_Window* window, UINT32 renFlags)
+{
+	SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, renFlags);
+	if(renderer == nullptr)
+	{
+		SDL_DestroyWindow(window);
+		std::cout << "Error Creating Renderer: " << SDL_GetError() << std::endl;
+		SDL_Quit();
+	}
+	return renderer;
+}
 
-	std::cout << "Setup Complete.\n";
+void end(SDL_Window* window, SDL_Renderer* renderer, std::list<SDL_Texture*, std::string> textureList)
+{
+	SDL_DestroyRenderer(renderer);
+	SDL_DestroyWindow(window);
+	for (SDL_Texture* texture : textureList)
+	{
+		SDL_DestroyTexture(texture);
+	}
+	SDL_Quit();
 }

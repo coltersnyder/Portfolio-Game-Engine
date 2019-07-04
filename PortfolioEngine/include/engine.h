@@ -1,38 +1,16 @@
 #pragma once
 
+#include <iostream>
+#include <string>
+#include <list>
+
 #include "GL/glew.h"
 #include "GL/freeglut.h"
+#include "SDL.h"
 
 namespace pge
 {
-	struct Window
-	{
-		const char* title;
-		int width;
-		int height;
-		int posX;
-		int posY;
-		bool resizable;
-	};
-
-	struct Context
-	{
-		int majVersion;
-		int minVersion;
-		bool core;
-	};
-
-	struct Framebuffer
-	{
-		
-	};
-	
-	class Engine
-	{
-	private:
-		
-
-	public:
-		void init(Window window, Context context, Framebuffer framebuffer, int* argc, char** argv);
-	};
+	SDL_Window* createWindow(char* title, int posX, int posY, int width, int height, UINT32 winFlags);
+	SDL_Renderer* createRenderer(SDL_Window* window, UINT32 renFlags);
+	void end(SDL_Window* window, SDL_Renderer* renderer, std::list<SDL_Texture*, std::string> textureList);
 }
