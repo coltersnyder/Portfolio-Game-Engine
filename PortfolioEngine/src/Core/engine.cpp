@@ -2,8 +2,27 @@
 
 using namespace pge;
 
-SDL_Window* createWindow(WinInfo winInfo)
+SDL_Window* createWindow(WinInfo winInfo, bool isFullScreen)
 {
+	if (isFullScreen)
+	{
+#ifdef _WIN32
+		winInfo.width = GetSystemMetrics(SM_CXSCREEN);
+		winInfo.height = GetSystemMetrics(SM_CYSCREEN);
+#endif
+
+#ifdef __linux__
+		Display* display = XOpenDisplay(NULL);
+		Screen* screen = DefaultScreenOfDisplay(display);
+		winInfo.width = screen->width;
+		winInfo.height = screen->height;
+#endif
+
+		winInfo.posX = 0;
+		winInfo.posY = 0;
+		winInfo.title = "Sample";
+		winInfo.winFlags = 0;
+	}
 	SDL_Window* window = SDL_CreateWindow(winInfo.title, winInfo.posX, winInfo.posY, winInfo.width, winInfo.height, winInfo.winFlags);
 	if(window == nullptr)
 	{
