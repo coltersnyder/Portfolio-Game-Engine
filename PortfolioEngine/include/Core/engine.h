@@ -36,6 +36,6 @@ namespace pge
 
 	SDL_Window* createWindow(WinInfo winInfo, bool isFullScreen);
 	SDL_Renderer* createRenderer(RenderInfo renInfo);
-	void init();
+	void init(UINT32 flags, int* argc, char* argv[]);
 	void end(SDL_Window* window, SDL_Renderer* renderer, std::map<std::string, SDL_Texture*> textureList);
 }

@@ -44,9 +44,10 @@ SDL_Renderer* createRenderer(RenderInfo renInfo)
 	return renderer;
 }
 
-void init()
+void init(UINT32 flags, int* argc, char* argv[])
 {
-	
+	SDL_Init(flags);
+	glutInit(argc, argv);
 }
 
 void end(SDL_Window* window, SDL_Renderer* renderer, std::map<std::string, SDL_Texture*> textureList)
