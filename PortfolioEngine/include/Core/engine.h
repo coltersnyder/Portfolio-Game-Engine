@@ -20,7 +20,7 @@ namespace pge
 {
 	struct WinInfo
 	{
-		char* title;
+		const char* title;
 		int posX;
 		int posY;
 		int width;

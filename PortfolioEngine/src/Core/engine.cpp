@@ -17,11 +17,6 @@ SDL_Window* createWindow(WinInfo winInfo, bool isFullScreen)
 		winInfo.width = screen->width;
 		winInfo.height = screen->height;
 #endif
-
-		winInfo.posX = 0;
-		winInfo.posY = 0;
-		winInfo.title = "Sample";
-		winInfo.winFlags = 0;
 	}
 	SDL_Window* window = SDL_CreateWindow(winInfo.title, winInfo.posX, winInfo.posY, winInfo.width, winInfo.height, winInfo.winFlags);
 	if(window == nullptr)
@@ -54,7 +49,8 @@ void end(SDL_Window* window, SDL_Renderer* renderer, std::map<std::string, SDL_T
 {
 	SDL_DestroyRenderer(renderer);
 	SDL_DestroyWindow(window);
-	for (std::map<std::string, SDL_Texture*>::iterator it = textureList.begin; it != textureList.end(); ++it)
+	
+	for (std::map<std::string, SDL_Texture*>::iterator it = textureList.begin(); it != textureList.end(); ++it)
 	{
 		SDL_DestroyTexture(it->second);
 	}
