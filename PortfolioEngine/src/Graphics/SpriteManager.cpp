@@ -13,5 +13,5 @@ SpriteManager::void addSprite(std::string filename, SDL_Renderer* renderer) {
 }
 
 SpriteManager::void addAnimation(SDL_Texture* texture, std::string animationName) {
-
+	
 }

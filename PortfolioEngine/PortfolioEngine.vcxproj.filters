@@ -21,9 +21,15 @@
     <ClCompile Include="Sample Game\src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SDL_Animation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Core\engine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL_Animation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

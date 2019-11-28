@@ -16,6 +16,19 @@
 #include <X11/Xlib.h>
 #endif
 
+#ifdef __APPLE__ 
+	#ifdef __MACH__ // Apple OSX and iOS (Darwin)
+		#include <TargetConditionals.h>
+		#if TARGET_IPHONE_SIMULATOR == 1
+			 // Apple iOS
+		#elif TARGET_OS_IPHONE == 1
+			// Apple iOS
+		#elif TARGET_OS_MAC == 1
+			// Apple OSX
+		#endif
+	#endif
+#endif
+
 namespace pge
 {
 	struct WinInfo
