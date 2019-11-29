@@ -1,5 +1,7 @@
 #include "../../include/Graphics/SpriteManager.h"
 
+using namespace pge;
+
 SpriteManager::~SpriteManager()
 {
 	this.animationList.erase();

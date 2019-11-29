@@ -1,5 +1,7 @@
 #include "../../include/Graphics/SDL_Animation.h"
 
+using namespace pge;
+
 SDL_Animation::SDL_Animation() {
 	CurrentFrame = 0;
 	MaxFrame = 0;
